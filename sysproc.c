@@ -85,7 +85,7 @@ int sys_uptime(void)
 }
 
 extern int trace_state;
-extern int syscall_count[24];
+extern int syscall_count[NUM_SYSCALLS];
 
 void sys_toggle(void)
 {
@@ -108,31 +108,30 @@ void sys_print_trace(void)
 
   const char *syscall_names[] = {
       // SYS 0 is usually unused or invalid
-      "unused",     
-      "fork",       
-      "exit",       
-      "wait",       
-      "pipe",       
-      "read",       
-      "kill",       
-      "exec",       
-      "fstat",      
-      "chdir",      
-      "dup",        
-      "getpid",     
-      "sbrk",       
-      "sleep",      
-      "uptime",     
-      "open",       
-      "write",      
-      "mknod",      
-      "unlink",     
-      "link",       
-      "mkdir",      
-      "close",      
-      "toggle",     
-      "print_trace" 
-  };
+      "unused",
+      "fork",
+      "exit",
+      "wait",
+      "pipe",
+      "read",
+      "kill",
+      "exec",
+      "fstat",
+      "chdir",
+      "dup",
+      "getpid",
+      "sbrk",
+      "sleep",
+      "uptime",
+      "open",
+      "write",
+      "mknod",
+      "unlink",
+      "link",
+      "mkdir",
+      "close",
+      "toggle",
+      "print_trace"};
 
   // Print in alphabetical order
   for (int i = 0; i < NUM_SYSCALLS; i++)
