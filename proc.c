@@ -20,6 +20,9 @@ extern void trapret(void);
 
 static void wakeup1(void *chan);
 
+int trace_state = 0;  // TRACE OFF by default
+int syscall_count[NUM_SYSCALLS] = {0};  // Initialize counts to 0
+
 void
 pinit(void)
 {
