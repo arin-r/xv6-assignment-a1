@@ -535,3 +535,20 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+void ps_info(void) 
+{
+  struct proc *p;
+  acquire(&ptable.lock);
+  for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) 
+  {
+    if (p->state == UNUSED) 
+    {
+      continue;
+    }
+
+    cprintf("PID: %d, Name: %s, State: %d\n", p->pid, p->name, (int) p->state);
+  }
+  // not releasing lock here causes panic
+  release(&ptable.lock);
+}

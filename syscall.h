@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_toggle 22
 #define SYS_print_trace 23
+#define SYS_ps 24

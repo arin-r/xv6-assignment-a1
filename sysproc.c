@@ -146,3 +146,8 @@ void sys_print_trace(void)
     }
   }
 }
+
+void sys_ps(void) 
+{
+  ps_info();
+}

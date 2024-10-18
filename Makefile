@@ -184,6 +184,7 @@ UPROGS=\
 	_zombie\
 	_test_trace\
 	_toggle_trace\
+	_ps_test\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
